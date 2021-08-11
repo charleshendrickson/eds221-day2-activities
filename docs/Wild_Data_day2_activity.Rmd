@@ -1,0 +1,61 @@
+---
+title: "Wild_data_day2_activity"
+author: "Charles Hendrickson"
+date: "8/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+# Read in the data using read_csv() with here(), store as mack_verts
+
+```{r}
+mack_verts <- read_csv(here("data", "AS00601.csv"))
+
+mack_verts
+
+mack_verts <- mack_verts %>% clean_names()
+
+mack_verts
+
+```
+
+
+# In a new code chunk, practice accessing individual pieces of the data frame (there is no real functionality to this, but just to reinforce stuff we learned in our interactive session):
+
+```{r}
+mc_wt_5 <- mack_verts$weight[5]
+mc_wt_5
+```
+
+# Store the 8th - 20th value in the “LENGTH1” column as mc_length_8_20
+```{r}
+mc_length_8_20 <- mack_verts$length1[8:20]
+mc_length_8_20
+```
+
+
+Store everything in column SAMPLEDATE as a vector called mc_dates
+```{r}
+mc_dates <- mack_verts$sampledate
+mc_dates
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
